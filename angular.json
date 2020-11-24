@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "gifsearch"
+  "defaultProject": "gifsearch",
+  "cli": {
+    "analytics": "c33d3313-c76c-4604-b661-28ab7352a484"
+  }
 }
