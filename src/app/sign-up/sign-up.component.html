@@ -46,4 +46,7 @@
     <button [disabled]="signUpForm.form.invalid" type="submit" class="btn btn-primary">Sign Up</button>
 
   </form>
+  <div *ngIf="success">
+    Success
+  </div>
 </div>

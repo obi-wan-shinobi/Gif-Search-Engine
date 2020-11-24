@@ -12,6 +12,7 @@ export class SignUpComponent {
   emails = ['shreyaskalvankar@gmail.com', 'shreyas@gmail.com'];
   usernameFlag = false;
   emailFlag = false;
+  success = false;
 
   userModel = new User('', '', '', '', false);
 
@@ -31,6 +32,9 @@ export class SignUpComponent {
     else{
       this.emailFlag = false;
     }
+
+    if(this.emailFlag == false && this.usernameFlag == false)
+      this.success = true;
   }
 
 }
