@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignupSerService {
 
-  private userName = new Subject<string>();
-  private userPassword = new Subject<string>();
+  private userName = new BehaviorSubject<string>('');
+  private userPassword = new BehaviorSubject<string>('');
 
   name$ = this.userName.asObservable();
   password$ = this.userPassword.asObservable();

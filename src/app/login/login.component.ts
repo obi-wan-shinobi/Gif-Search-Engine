@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   constructor(private _signupService: SignupSerService) { }
 
   ngOnInit() {
-    console.log(this.usernames, this.passwords)
     this._signupService.name$
       .subscribe(
         username => {
