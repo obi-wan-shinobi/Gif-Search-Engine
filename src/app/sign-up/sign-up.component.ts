@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignupSerService } from '../signup-ser.service';
 import { User } from '../user';
 
 @Component({
@@ -9,12 +10,15 @@ import { User } from '../user';
 export class SignUpComponent {
 
   usernames = ['shreyas', 'shreyask', 'shreyask1'];
-  emails = ['shreyaskalvankar@gmail.com', 'shreyas@gmail.com'];
+  passwords = ['password', 'password1', 'password2'];
+  emails = ['shreyaskalvankar@gmail.com', 'shreyas@gmail.com', 'shreyas@test.com'];
   usernameFlag = false;
   emailFlag = false;
   success = false;
 
   userModel = new User('', '', '', '', false);
+
+  constructor (private _signupService : SignupSerService) {}
 
   onSubmit(){
     var usernameExists = this.usernames.includes(this.userModel.username);
@@ -35,6 +39,14 @@ export class SignUpComponent {
 
     if(this.emailFlag == false && this.usernameFlag == false)
       this.success = true;
+
+    if(this.success) {
+      this._signupService.sendUsername(this.userModel.username);
+      this._signupService.sendPassword(this.userModel.password);
+      this.usernames.push(this.userModel.username);
+      this.emails.push(this.userModel.email);
+      this.passwords.push(this.userModel.password);
+    }
   }
 
 }
