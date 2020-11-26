@@ -16,6 +16,7 @@
       [class.is-invalid]="password.invalid && password.touched" class="form-control"
       name="password" [(ngModel)]="userModel.password">
       <small class="text-danger" [class.d-none]="password.valid || password.untouched">Please enter a password</small>
+      <small class="text-danger" *ngIf="!correctPass">Incorrect Password</small>
     </div>
 
     <button [disabled]="loginForm.form.invalid" type="submit" class="btn btn-primary">Log In</button>
