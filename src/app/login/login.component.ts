@@ -21,16 +21,20 @@ export class LoginComponent implements OnInit {
     this._signupService.name$
       .subscribe(
         username => {
-          this.usernames.push(username);
-          console.log("Inside Observable:",this.usernames);
+          if(username != ''){
+            this.usernames.push(username);
+            console.log("Inside Observable:",this.usernames);
+          }
         }
       );
 
     this._signupService.password$
       .subscribe(
         password => {
-          this.passwords.push(password);
-          console.log("Inside Observable",this.passwords);
+          if(password != '') {
+            this.passwords.push(password);
+            console.log("Inside Observable",this.passwords);
+          }
         }
       );
   }
@@ -50,6 +54,7 @@ export class LoginComponent implements OnInit {
       }
       else {
         this.correctPass = false;
+        this.success = false;
       }
     }
   }
