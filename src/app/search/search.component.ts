@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../data.service";
+import { ApplicationRef } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -9,8 +10,9 @@ import { DataService } from "../data.service";
 export class SearchComponent implements OnInit {
 
   gifs: any[] = [];
+  successFlag = true;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private ref: ApplicationRef) { }
 
   ngOnInit(): void {
   }
@@ -21,8 +23,21 @@ export class SearchComponent implements OnInit {
         .subscribe((response: any) => {
           console.log('Search Data', response);
           this.gifs = response.data
+          this.ref.tick();
+          this.check(response.data.length);
         });
+      }
+  }
+  check(data: number){
+    if(data == 0) {
+      console.log("Results not Found")
+      this.successFlag = false;
     }
+    else {
+      console.log("Results Found")
+      this.successFlag = true;
+    }
+    console.log(this.successFlag);
   }
 
 }
