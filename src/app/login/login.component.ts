@@ -9,10 +9,10 @@ import { User } from "../user";
 })
 export class LoginComponent implements OnInit {
   public usernames = ['shreyas', 'shreyask', 'shreyask1'];
-  public uname: string = '';
   public passwords = ['password', 'password1', 'password2'];
-  userModel = new User('', 'rob@123.com', 'Robb', 'Robrox', false);
+  userModel = new User('', '', '', '', false);
   success = false;
+  correctPass = true;
   usernameFlag = false;
 
   constructor(private _signupService: SignupSerService) { }
@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
       .subscribe(
         username => {
           this.usernames.push(username);
-          this.uname = username;
           console.log("Inside Observable:",this.usernames);
         }
       );
@@ -37,7 +36,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.uname);
     var usernameExists = this.usernames.includes(this.userModel.username);
     if(usernameExists){
       this.usernameFlag = false;
@@ -45,6 +43,14 @@ export class LoginComponent implements OnInit {
     }
     else{
       this.usernameFlag = true;
+    }
+    if(this.success){
+      if(this.userModel.password == this.passwords[this.usernames.indexOf(this.userModel.username)]) {
+        this.correctPass = true;
+      }
+      else {
+        this.correctPass = false;
+      }
     }
   }
 }
