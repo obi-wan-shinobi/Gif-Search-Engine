@@ -1,8 +1,9 @@
 .gifs {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  width: 190px;
-  margin: 10px;
+  width: 300px;
+  margin: 32px;
+
 }
 .gif img {
   max-width: 200px;
