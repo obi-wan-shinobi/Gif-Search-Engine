@@ -5,8 +5,8 @@ driver = webdriver.Chrome(chromedriver)
 driver.set_window_size(1200,700)
 driver.get("http://localhost:4200")
 driver.find_element_by_xpath("/html/body/app-root/div/nav/a[4]").click()
-names = ['modi','pranav','hrishikesh','kalvankar','atharva','shreyas']
-passwords = ['hindurashtra','85412','aavvc','qwsad','45210','pappu']
+names = ['raju','pranav','hrishikesh','kalvankar','atharva','shreyas']
+passwords = ['abcdef','85412','aavvc','qwsad','45210','pappu']
 name_exist = 'Username already exists'
 open('sign.txt','w').close()
 
