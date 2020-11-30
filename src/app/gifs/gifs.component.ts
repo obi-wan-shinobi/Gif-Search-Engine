@@ -8,6 +8,7 @@ import { DataService } from "../data.service";
 })
 export class GifsComponent implements OnInit {
 
+
   gifs: any[] = [];
 
   constructor(private dataService: DataService) { }
