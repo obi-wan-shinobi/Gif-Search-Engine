@@ -8,7 +8,7 @@ driver.find_element_by_xpath("/html/body/app-root/div/nav/a[4]").click()
 names = ['raju','pranav','hrishikesh','kalvankar','atharva','shreyas']
 passwords = ['abcdef','85412','aavvc','qwsad','45210','pappu']
 name_exist = 'Username already exists'
-open('sign.txt','w').close()
+open('outputs/signup.txt','w').close()
 
 def signup(names,passwords):
     for i in range(0,6):
@@ -39,7 +39,7 @@ def signup(names,passwords):
             exists2 = driver.find_element_by_id('succ_test').text
 
 
-        with open ('sign.txt','a') as file:
+        with open ('outputs/signup.txt','a') as file:
             if 'Success' == exists2:
                 file.write(names[i]+' : '+'Success')
                 file.write('\n')
