@@ -12,10 +12,8 @@ text2 = 'Success'
 text3 = 'Incorrect Password'
 text4 = 'Please enter a username'
 text5 = 'Please enter a password'
-open('output.txt', 'w').close()
+open('outputs/output.txt', 'w').close()
 driver.find_element_by_xpath("/html/body/app-root/div/nav/a[3]").click()
-with open('source.txt','w') as f:
-    f.write(driver.page_source)
 
 for i in range(0,8):
     driver.refresh()
@@ -31,7 +29,7 @@ for i in range(0,8):
     signin.click()
     exists = driver.page_source
 
-    with open('output.txt','a') as file:
+    with open('outputs/output.txt','a') as file:
         flag = 0
         if text2 in exists :
             file.write(user[i]+':'+' '+text2)
