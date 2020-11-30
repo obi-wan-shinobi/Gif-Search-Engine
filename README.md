@@ -59,38 +59,36 @@ The about page contains the information about the project and the purpose of cre
 
 ## Testing
 
-The following section will briefly summarize the testing carried out using the Selenium testing tool. The test cases have been documented and the output can be found in the [testing/outputs](/testing/outputs) folder. 
+The following section will briefly summarize the testing carried out using the Selenium testing tool. The test cases have been documented and the output can be found in the [testing/outputs](/testing/outputs) folder.
 
 For example,
 
 ### Login Testing :
 
-Test 1 :Login Form validation <br>
-Case : username : shreyas
-<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password : password
-<br>
-Output : Success <br>
-Test Case Output :Success
-<br> Result : Pass
-<br>
+#### Test 1 : Login Form validation
+**_Case :_**  
+**Username** : shreyas  
+**Password** : password  
+**Output** : Success <br>
+**Test Case Output** :Success  
+**Result** : Pass
+
 ### Sign-Up Testing :
 
-Test 1 :Sign up validation <br>
-Case : username : raju
-<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email : raju@xyz.com
-<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password : 12345
-<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username : raju
-<br>
-Output : Success <br>
-Test Case Output :Success
-<br> Result : Pass
-<br>
+#### Test 1 :Sign up validation  
+**_Case :_**  
+**Name** : raju  
+**email** : raju@xyz.com  
+**password** : 12345  
+**Username** : raju  
+**Output** : Success  
+**Test Case Output** :Success  
+**Result** : Pass
+
 ### Search Testing :
 
-
-Test 1 :Search validation <br>
-Case : car
-<br>
-Output : GIFs  <br>
-Test Case Output :GIF link stored in search.txt
-<br> Result : Pass
+#### Test 1 :Search validation
+**_Case_** : car  
+__Output__ : GIFs    
+__Test Case Output__ : GIF link stored in search.txt  
+__Result__ : Pass
